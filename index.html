@@ -1,213 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Tailwind & Daisy UI CDN Link -->
-
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <title>Mastaring in DOM</title>
-
-</head>
-
-<body>
-<header>
-    <div class="navbar bg-base-100">
-        <div class="flex-1">
-          <a class="btn btn-ghost text-xl">daisyUI</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Traveler</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo-container">
+        <img class="logo" src="./images/logo.png" alt="" />
+      </div>
+      <div class="profile">
+        <div class="cart-icon-container">
+          <img id="menu-cart" src="./images/cart.png" alt="" />
+          <h2 id="cart-count">0</h2>
         </div>
-        <div class="flex-none">
-          <div class="dropdown dropdown-end">
-            <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-              <div class="indicator">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-                <span id="count" class="badge badge-sm indicator-item">0</span>
-              </div>
-            </div>
-            <div
-              tabindex="0"
-              class="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
-              <div class="card-body">
-                <span class="text-lg font-bold">8 Items</span>
-                <span class="text-info">Subtotal: $999</span>
-                <div class="card-actions">
-                  <button class="btn btn-primary btn-block">View cart</button>
-                </div>
-              </div>
+        <li>Home</li>
+        <li>Setting</li>
+        <img class="profile-logo" src="./images/man.png" alt="" />
+      </div>
+    </nav>
+    <main>
+      <!-- banner section -->
+      <section class="banner-container">
+        <div class="banner-left">
+          <h1 class="title">Lets Travel</h1>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            expedita quae eum temporibus tenetur porro commodi doloribus omnis
+            explicabo vero?
+          </p>
+          <h1>Total Budget: <span id="budget">900</span> $</h1>
+        </div>
+        <div class="banner-right">
+          <img class="banner-img" src="./images/banner.png" alt="" />
+        </div>
+      </section>
+
+      <!-- main content area -->
+      <div class="category"></div>
+      <section class="content-area-cotainer">
+        <div class="left-content">
+          <div class="palce">
+            <img class="place-img" src="./images/shajek.jpg" alt="" />
+            <div>
+              <h2>Shajek</h2>
+              <h4>Cost: <span class="price">300</span> $</h4>
+              <button class="add-btn">Add to Cart</button>
             </div>
           </div>
-          <div class="dropdown dropdown-end">
-            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-              <div class="w-10 rounded-full">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-              </div>
+          <div class="palce">
+            <img class="place-img" src="./images/Dhaka.jpg" alt="" />
+            <div>
+              <h2>Dhaka</h2>
+              <h4>Cost: <span class="price">300</span> $</h4>
+              <button class="add-btn">Add to Cart</button>
             </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-              <li>
-                <a class="justify-between">
-                  Profile
-                  <span class="badge">New</span>
-                </a>
-              </li>
-              <li><a>Settings</a></li>
-              <li><a>Logout</a></li>
-            </ul>
+          </div>
+          <div class="palce">
+            <img class="place-img" src="./images/shundar-ban.jpg" alt="" />
+            <div>
+              <h2>Khulna</h2>
+              <h4>Cost: <span class="price">500</span> $</h4>
+              <button class="add-btn">Add to Cart</button>
+            </div>
+          </div>
+          <div class="palce">
+            <img class="place-img" src="./images/coxBazar.jpg" alt="" />
+            <div>
+              <h2>Cox Bazar</h2>
+              <h4>Cost: <span class="price">500</span> $</h4>
+              <button class="add-btn">Add to Cart</button>
+            </div>
           </div>
         </div>
-      </div>
-</header>
-<!-- banner -->
- <section>
-    <div class="hero bg-base-200 min-h-screen">
-        <div class="hero-content flex-col lg:flex-row-reverse">
-          <img
-            src="images/traveling.jpg" />
-          <div>
-            <h1 class="text-5xl font-bold">Let's Travel</h1>
-            <p class="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-              quasi. In deleniti eaque aut repudiandae et a id nisi.
-            </p>
-           <p class="text-2xl font-bold">Total budget 900$</p>
+        <div id="cart-container" class="cart">
+          <h1>Cart</h1>
+          <hr />
+          <ul
+            id="selected-place-container"
+            class="selected-place-container"
+          ></ul>
+          <hr />
+          <div class="calculation-area">
+            <h4>Total cost: <span id="total-cost">0</span> $</h4>
           </div>
+          <div class="all-cat-btn">
+            <button onclick="grandTotal('bus')" class="category-btn">
+              Bus +100
+            </button>
+            <button onclick="grandTotal('train')" class="category-btn">
+              Train -200
+            </button>
+            <button onclick="grandTotal('flight')" class="category-btn">
+              Flight +500
+            </button>
+          </div>
+          <hr />
+          <h4>Grand Total : <span id="grand-total">0</span> $</h4>
         </div>
-      </div>
- </section>
-<main>
-    <section class="flex flex-col p-4 m-4 gap-4 min-h-screen">
-        <div class="flex flex-row items-center justify-between">
-            <!-- card section -->
-            <!--  -->
-            <div class="card bg-base-100 w-96 shadow-xl">
-                <figure class="px-10 pt-10">
-                  <img
-                    src="images/Sajek.png"
-                    alt="Shoes"
-                    class="rounded-xl" />
-                </figure>
-                <div class="card-body items-center text-center">
-                  <h2 class="card-title">Sajek</h2>
-                  <p>Cost : 700$</p>
-                  <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-            <!--  -->
-            <!--  -->
-            <div class="card bg-base-100 w-96 shadow-xl">
-                <figure class="px-10 pt-10">
-                  <img
-                    src="images/Sreemongol.png"
-                    alt="Shoes"
-                    class="rounded-xl" />
-                </figure>
-                <div class="card-body items-center text-center">
-                  <h2 class="card-title">Sreemongol</h2>
-                  <p>Cost : 600$</p>
-                  <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-            <!--  -->
-            <!--  -->
-            <div class="card bg-base-100 w-96 shadow-xl">
-                <figure class="px-10 pt-10">
-                  <img
-                    src="images/sundorbon.png"
-                    alt="Shoes"
-                    class="rounded-xl" />
-                </figure>
-                <div class="card-body items-center text-center">
-                  <h2 class="card-title">sundorbon</h2>
-                  <p>Cost : 300$</p>
-                  <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-            <!--  -->
-          
-            <!--  -->
-            <div class="card bg-base-100 w-96 shadow-xl">
-                <figure class="px-10 pt-10">
-                  <img
-                    src="images/Sajek.png"
-                    alt="Shoes"
-                    class="rounded-xl" />
-                </figure>
-                <div class="card-body items-center text-center">
-                  <h2 class="card-title">Chittagong</h2>
-                  <p>Cost : 200$</p>
-                  <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-           
-        </div>
- <!--  -->
- <div>
-    <!-- calculation section -->
-    <div class="overflow-x-auto mt-4 p-4">
-        <h1 class="text-center text-4xl font-extrabold">Calculation</h1>
-        <table class="table">
-          <!-- head -->
-           <h1 class="text-center text-black font-extrabold text-3xl mt-10">Cart</h1>
-          <thead>
-            <tr>
-             <th ><span class="text-2xl font-bold mt-4">Total Cost : 0$</span>   $</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- row 1 -->
-            <tr>
-              <th>1</th>
-              <td>Bus +200</td>
-            </tr>
-            <!-- row 2 -->
-            <tr>
-              <th>2</th>
-              <td>Train -300</td>
-            </tr>
-            <!-- row 3 -->
-            <tr>
-              <th>3</th>
-              <td>Flight -500</td>
-            </tr>
-          </tbody>
-        </table>
-        <h1 class="text-2xl font-bold mt-4">Grand Total : 0 $</h1>
-      </div>
-  </div>
-    </section>
-   
-</main>
+      </section>
+    </main>
 
+    <footer></footer>
 
-
-    
-<!-- script -->
- <script src="script.js"></script>
-</body>
-
+    <!-- script file  -->
+    <script src="/app.js"></script>
+  </body>
 </html>
